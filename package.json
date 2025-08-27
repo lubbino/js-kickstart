@@ -1,0 +1,32 @@
+{
+  "name": "js-kickstart",
+  "version": "1.0.0",
+  "description": "Beginner-friendly JavaScript textbook with exercises and automated tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tools/run-tests.js",
+    "test:one": "node tools/run-tests.js --only",
+    "test:solutions": "npx cross-env TARGET_FILE=solution.js node tools/run-tests.js",
+    "test:solutions:one": "npx cross-env TARGET_FILE=solution.js node tools/run-tests.js --only",
+    "test:watch": "node tools/run-tests.js --watch",
+    "setup:prompt": "npm i prompt-sync"
+  },
+  "keywords": [
+    "javascript",
+    "education",
+    "programming",
+    "beginner",
+    "exercises"
+  ],
+  "author": "JS Kickstart Team",
+  "license": "MIT",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^10.0.0"
+  }
+}
