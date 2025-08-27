@@ -118,3 +118,5 @@ MIT License - feel free to use and adapt for educational purposes.
 ---
 
 **Happy coding!** 🎉
+
+JavaScript is a trademark of Oracle Corporation. This project is not affiliated with or endorsed by Oracle.
