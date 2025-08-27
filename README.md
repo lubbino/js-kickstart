@@ -133,6 +133,19 @@ By completing this course, you will understand:
 - Review the chapter material for concepts
 - Look at error messages from tests for hints
 - Ask your teacher or study group for support
+- **Ask questions on GitHub**: [Create an issue](https://github.com/r-/js-kickstart/issues) for help with exercises or technical problems
+
+## 🐙 Working Across Multiple Computers
+
+Want to save your progress and work on exercises from different computers? Learn how to use GitHub to sync your work:
+
+👉 **[Complete Guide: Using GitHub for Your Exercises](docs/using-github.md)**
+
+This guide covers:
+- Forking the repository to your own GitHub account
+- Saving your exercise solutions
+- Syncing work between home, school, and library computers
+- Getting updates when new exercises are added
 
 ## 🤝 Contributing
 
