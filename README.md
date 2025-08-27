@@ -10,9 +10,32 @@
 - A code editor (VS Code recommended)
 
 ### Setup
-1. Clone or download this repository
-2. Open a terminal in the project folder
-3. Install dependencies:
+
+#### Option 1: Clone with Git (Recommended)
+1. **Open a terminal/command prompt**
+2. **Navigate to where you want the project** (e.g., your Desktop or Documents folder):
+   ```bash
+   cd Desktop
+   ```
+3. **Clone the repository** (this creates a `js-kickstart` folder automatically):
+   ```bash
+   git clone https://github.com/r-/js-kickstart.git
+   ```
+4. **Enter the project folder**:
+   ```bash
+   cd js-kickstart
+   ```
+5. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+#### Option 2: Download ZIP
+1. Click the green "Code" button on GitHub
+2. Select "Download ZIP"
+3. Extract the ZIP file to your desired location
+4. Open a terminal in the extracted folder
+5. Install dependencies:
    ```bash
    npm install
    ```
@@ -110,6 +133,16 @@ By completing this course, you will understand:
 - Review the chapter material for concepts
 - Look at error messages from tests for hints
 - Ask your teacher or study group for support
+
+## 🤝 Contributing
+
+We welcome contributions! Whether you want to:
+- Report a bug or typo
+- Suggest improvements to exercises
+- Add new learning materials
+- Fix documentation
+
+Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions on how to get involved.
 
 ## 📄 License
 
