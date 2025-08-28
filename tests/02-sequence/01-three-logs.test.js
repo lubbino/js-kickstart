@@ -9,12 +9,12 @@ function getTargetFile() {
     return process.env.TARGET_FILE === 'solution.js' ? 'solution.js' : 'script.js';
 }
 
-async function test_03_day_plan() {
-  console.log('Testing 02-sequence/03-day-plan...');
+async function test_01_three_logs() {
+  console.log('Testing 02-sequence/01-three-logs...');
   
   // Test 1: Should print exactly 3 lines of output
   const targetFile = getTargetFile();
-  const result = await runScript(`exercises/02-sequence/03-day-plan/${targetFile}`);
+  const result = await runScript(`exercises/02-sequence/01-three-logs/${targetFile}`);
   assert.strictEqual(result.code, 0, 'Script should run without errors');
   
   const lines = normalizeOutput(result.stdout);
@@ -28,14 +28,7 @@ async function test_03_day_plan() {
   });
   console.log('✅ All lines are meaningful activities');
   
-  // Test 3: Should contain activity-like content
-  const allText = lines.join(' ').toLowerCase();
-  const activityWords = ['wake', 'eat', 'go', 'work', 'study', 'sleep', 'class', 'exercise', 'breakfast', 'lunch', 'dinner'];
-  const hasActivityWord = activityWords.some(word => allText.includes(word));
-  assert(hasActivityWord, 'Output should contain activity-related words');
-  console.log('✅ Contains activity-related content');
-  
-  console.log('🎉 All tests passed for 02-sequence/03-day-plan!');
+  console.log('🎉 All tests passed for 02-sequence/01-three-logs!');
   return true;
 }
 
@@ -43,13 +36,13 @@ async function runSequenceTests() {
   console.log('🧪 Running Sequence Tests...');
   
   try {
-    const dayPlanPassed = await test_03_day_plan();
+    const threeLogsPassed = await test_01_three_logs();
     
     console.log('\n📊 Sequence Tests Summary:');
-    console.log(`Day Plan: ${dayPlanPassed ? '✅ PASS' : '❌ FAIL'}`);
-    console.log(`Overall: ${dayPlanPassed ? '✅ TESTS COMPLETED' : '❌ SOME TESTS FAILED'}`);
+    console.log(`Three Logs: ${threeLogsPassed ? '✅ PASS' : '❌ FAIL'}`);
+    console.log(`Overall: ${threeLogsPassed ? '✅ TESTS COMPLETED' : '❌ SOME TESTS FAILED'}`);
     
-    return dayPlanPassed;
+    return threeLogsPassed;
   } catch (error) {
     console.log('❌ Sequence tests failed:', error.message);
     return false;

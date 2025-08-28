@@ -87,37 +87,27 @@ We recommend **Visual Studio Code (VS Code)**, which is free and beginner-friend
 
 ## 🚀 Your First JavaScript Program
 
-Let's write a simple "Hello, World!" program to make sure everything works.
+Now that you have Node.js and VS Code set up, let's verify everything works by completing your first exercise!
 
-### Step 1: Create a Project Folder
-1. Create a new folder on your Desktop called `my-first-js`
-2. Open VS Code
-3. Go to File → Open Folder and select your `my-first-js` folder
+### Practice Exercise: Hello World
 
-### Step 2: Create Your First File
-1. In VS Code, create a new file called `hello.js`
-2. Type this code:
+Instead of creating a separate project, you'll complete the **Hello World exercise** that's included with this course. This exercise will:
 
-```javascript
-console.log("Hello, World!");
-console.log("Welcome to JavaScript programming!");
-```
+- Verify your Node.js installation works correctly
+- Familiarize you with the course exercise structure
+- Give you practice with the basic workflow
 
-### Step 3: Run Your Program
-1. Open the terminal in VS Code (Terminal → New Terminal)
-2. Type this command and press Enter:
+**To complete the Hello World exercise:**
 
-```bash
-node hello.js
-```
+1. Navigate to the exercise folder: `exercises/01-intro/01-hello-world/`
+2. Open the `README.md` file for detailed instructions
+3. Edit the `script.js` file to complete the exercise
+4. Run your solution: `node script.js`
+5. Test your work: `npm test`
 
-You should see:
-```
-Hello, World!
-Welcome to JavaScript programming!
-```
+This exercise will have you write a simple `console.log("Hello, World!");` statement, just like the example above, but within the structured exercise format you'll use throughout the course.
 
-🎉 **Congratulations!** You just wrote and ran your first JavaScript program!
+🎉 **Completing this exercise confirms your setup is working perfectly!**
 
 ## 📚 Understanding This Course
 
@@ -212,11 +202,14 @@ In the next chapter, we'll start with the most fundamental concept in programmin
 
 Make sure you can:
 - [ ] Run `node --version` and see a version number
-- [ ] Open VS Code and create a new file
-- [ ] Write a simple `console.log()` statement
-- [ ] Run a JavaScript file with `node filename.js`
+- [ ] Open VS Code and navigate to the course exercises
+- [ ] Complete the Hello World exercise (`exercises/01-intro/01-hello-world/`)
+- [ ] Run your solution with `node script.js` and see the output
+- [ ] Run `npm test` and see the test results
 
 If any of these don't work, review the setup instructions or ask for help!
+
+**✅ Completing the Hello World exercise confirms your environment is properly set up for the rest of the course!**
 
 ## 🆘 Getting Help
 

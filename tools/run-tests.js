@@ -3,7 +3,28 @@ const path = require('path');
 
 /**
  * Simple test runner for JavaScript Get Started exercises
- * Usage: node tools/run-tests.js [--only <test-pattern>] [--watch]
+ *
+ * TESTING MODES:
+ * ==============
+ *
+ * STUDENT MODE (default):
+ *   - Tests script.js files (student starter files)
+ *   - Many tests will fail until students complete exercises
+ *   - Usage: npm test
+ *   - Usage: node tools/run-tests.js
+ *
+ * INSTRUCTOR MODE:
+ *   - Tests solution.js files (reference solutions)
+ *   - All tests should pass (validates instructor solutions)
+ *   - Usage: npm run test:solutions
+ *   - Usage: npx cross-env TARGET_FILE=solution.js node tools/run-tests.js
+ *
+ * IMPORTANT: Don't use "set TARGET_FILE=solution.js && npm test" on Windows
+ * as it won't work properly. Always use the npm scripts with cross-env.
+ *
+ * Additional Options:
+ *   --only <pattern>  Run only tests matching the pattern
+ *   --watch          Watch for file changes and re-run tests
  */
 
 class TestRunner {
@@ -114,6 +135,20 @@ class TestRunner {
   async runTests(pattern = null) {
     console.log('🚀 JavaScript Get Started - Test Runner');
     console.log('=====================================');
+    
+    // Check which files we're testing and provide guidance
+    const targetFile = process.env.TARGET_FILE || 'script.js';
+    if (targetFile === 'solution.js') {
+      console.log('📚 INSTRUCTOR MODE: Testing solution.js files');
+      console.log('   ✅ All tests should pass (reference solutions)');
+      console.log('   💡 Use: npm run test:solutions');
+    } else {
+      console.log('🎓 STUDENT MODE: Testing script.js files');
+      console.log('   ⚠️  Many tests will fail until students complete exercises');
+      console.log('   💡 Use: npm test (for students checking their work)');
+      console.log('   💡 Use: npm run test:solutions (for instructors/reference)');
+    }
+    console.log('');
     
     if (pattern) {
       console.log(`🔍 Running tests matching: ${pattern}`);
