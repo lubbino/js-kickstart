@@ -1,194 +1,162 @@
-# Mini-Project: Guess the Number Game
+# Mini-Project: Personal Task Manager
 
-## 🎯 Goal
+## Goal
 
-Create a complete "Guess the Number" game that combines everything you've learned: variables, functions, loops, conditionals, and user input. This mini-project demonstrates how individual programming concepts work together to create a real application.
+Create a simple personal task manager that helps you organize your daily tasks. This project lets you apply everything you've learned in a creative, open-ended way without strict requirements or automated tests.
 
-## 🎮 Game Description
+## Project Description
 
-The computer picks a random number between 1 and 100, and the player tries to guess it. After each guess, the game provides feedback:
-- "Too high!" if the guess is above the target
-- "Too low!" if the guess is below the target  
-- "Correct!" when the player guesses the number
+Build a task manager that can:
+- Add new tasks to your list
+- Mark tasks as completed
+- Display all your tasks
+- Show how many tasks you have left
 
-The game tracks the number of attempts and congratulates the player when they win.
+The beauty of this project is that **you decide how to implement it**! There are many valid approaches, and your solution might be completely different from your classmates' - and that's perfectly fine!
 
-## 📋 Requirements
+## Example Features (Choose What You Want!)
 
-Your program should include these **functions** (testable logic):
+**Basic Features:**
+- Add a task: "Buy groceries"
+- Mark task as done: ✓ "Buy groceries" 
+- List all tasks with their status
+- Count remaining tasks
 
-1. **`generateRandomNumber(min, max)`** - Returns a random integer between min and max (inclusive)
-2. **`checkGuess(guess, target)`** - Returns "too high", "too low", or "correct"
-3. **`isValidGuess(input)`** - Returns true if input is a valid number between 1-100
-4. **`playGame()`** - Main game logic that coordinates everything
+**Optional Enhancements (if you want a challenge):**
+- Delete tasks from the list
+- Edit existing tasks
+- Add priority levels (high, medium, low)
+- Add due dates
+- Save tasks to a file
+- Create different categories (work, personal, shopping)
 
-And this **interactive file** (for playing):
-5. **`cli.js`** - Interactive version using prompt-sync for actual gameplay
-
-## 💡 Example Gameplay
-
-```
-Welcome to Guess the Number!
-I'm thinking of a number between 1 and 100.
-
-Enter your guess: 50
-Too high! Try again.
-
-Enter your guess: 25  
-Too low! Try again.
-
-Enter your guess: 37
-Too high! Try again.
-
-Enter your guess: 31
-Correct! You guessed it in 4 attempts!
-```
-
-## 🔧 Setup
+## Getting Started
 
 1. **Open `script.js`** in this folder
-2. **Implement the required functions** (these will be tested)
-3. **Test your functions:** `node script.js`
-4. **Create `cli.js`** for interactive gameplay (optional but fun!)
-5. **Run the automated test:** `npm run test:one -- 10-mini-project`
+2. **Think about your approach** - How do you want to store tasks? Arrays? Objects?
+3. **Start simple** - Maybe just add and list tasks first
+4. **Test as you go** - Run `node script.js` to see your progress
+5. **Add features gradually** - Build one feature at a time
 
-## 💭 Implementation Hints
+## Possible Approaches
 
-### Function 1: Generate Random Number
+### Approach 1: Simple Array
 ```javascript
-function generateRandomNumber(min, max) {
-    // Use Math.random() and Math.floor()
-    // Formula: Math.floor(Math.random() * (max - min + 1)) + min
+let tasks = ["Buy milk", "Walk the dog", "Study JavaScript"];
+// Add functions to manage this array
+```
+
+### Approach 2: Separate Arrays
+```javascript
+let todoTasks = ["Buy milk", "Study JavaScript"];
+let completedTasks = ["Walk the dog"];
+```
+
+### Approach 3: Parallel Arrays
+```javascript
+let tasks = ["Buy milk", "Walk the dog", "Study JavaScript"];
+let completed = [false, true, false]; // Same index as tasks
+```
+
+**Remember:** There's no "right" way - choose what makes sense to you!
+
+## Programming Concepts You Can Use
+
+Pick and choose from what you've learned:
+- **Variables** → Store your task lists
+- **Arrays** → Hold multiple tasks
+- **Functions** → Organize your code (addTask, markComplete, showTasks)
+- **Loops** → Display all tasks or find specific ones
+- **Conditionals** → Check if tasks are completed
+- **Input/Output** → Get user commands (if you want interactivity)
+
+## Testing Your Project
+
+**No automated tests!** Instead:
+1. **Run your code:** `node script.js`
+2. **Try different scenarios:**
+   - Add several tasks
+   - Mark some as completed
+   - Display your list
+   - Try edge cases (empty list, duplicate tasks)
+3. **Ask yourself:** Does it work the way I expected?
+
+## Success Criteria
+
+Your project is successful when:
+- [ ] You can add tasks to your system
+- [ ] You can mark tasks as completed
+- [ ] You can see your task list
+- [ ] You're proud of what you built!
+- [ ] Your code works without errors
+
+**That's it!** No complex requirements, no strict function signatures, no automated tests to pass.
+
+## Example Solutions
+
+Here are some different ways students might approach this:
+
+### Simple Console Logger
+```javascript
+// Just logs tasks and their status
+let tasks = ["Task 1", "Task 2"];
+console.log("My Tasks:");
+for (let i = 0; i < tasks.length; i++) {
+    console.log("- " + tasks[i]);
 }
 ```
 
-### Function 2: Check Guess
+### Interactive Menu System
 ```javascript
-function checkGuess(guess, target) {
-    // Compare guess to target
-    // Return "too high", "too low", or "correct"
+// Uses prompt-sync to let user add/complete tasks
+const prompt = require('prompt-sync')();
+
+function showMenu() {
+    console.log("1. Add task");
+    console.log("2. Complete task");
+    console.log("3. Show tasks");
 }
+
+let choice = prompt("Choose an option: ");
 ```
 
-### Function 3: Validate Input
-```javascript
-function isValidGuess(input) {
-    // Check if input is a number
-    // Check if it's between 1 and 100
-    // Return true or false
-}
-```
+**All of these are valid!** Choose your own adventure.
 
-### Function 4: Game Logic
-```javascript
-function playGame() {
-    // Generate target number
-    // Keep track of attempts
-    // Use a loop for multiple guesses
-    // Return game statistics
-}
-```
+## Reflection Questions
 
-## 🧠 Programming Concepts Used
+After building your task manager, think about:
+- What was the most challenging part?
+- What would you do differently next time?
+- What feature would you add if you had more time?
+- How could you make it more user-friendly?
 
-This project combines:
-- **Variables** → Store the target number, guesses, attempts
-- **Functions** → Organize code into reusable pieces  
-- **Conditionals** → Check if guess is high, low, or correct
-- **Loops** → Allow multiple guesses until correct
-- **Input/Output** → Get guesses from user, provide feedback
-- **Random Numbers** → Generate unpredictable target
-- **Validation** → Ensure user input is valid
+## Congratulations!
 
-## 🧪 Testing Your Solution
+By completing this project, you've demonstrated that you can:
+- Take a real-world problem and break it down
+- Choose appropriate programming concepts for your solution
+- Build something functional and useful
+- Make independent technical decisions
 
-**Test Functions Individually:**
-```bash
-node script.js
-```
+This is what programming is really about - solving problems creatively with the tools you know!
 
-**Test Interactive Game:**
-```bash
-node cli.js
-```
+## What You've Accomplished
 
-**Run Automated Tests:**
-```bash
-npm run test:one -- 10-mini-project
-```
+You've successfully applied concepts from:
+- **Chapter 3**: Variables (storing task data)
+- **Chapter 6**: Selections (checking task status)
+- **Chapter 7**: Iterations (processing task lists)
+- **Chapter 8**: Functions (organizing your code)
+- **Chapter 9**: Arrays (managing collections of tasks)
 
-The automated tests will verify:
-- `generateRandomNumber()` produces numbers in the correct range
-- `checkGuess()` returns correct feedback
-- `isValidGuess()` properly validates input
-- `playGame()` coordinates the game logic correctly
+Most importantly, you've learned to **think like a programmer** - taking a problem and figuring out how to solve it with code!
 
-## 🎯 Learning Focus
+## Next Steps
 
-This mini-project helps you practice:
-- **Function design** → Breaking problems into smaller pieces
-- **Program architecture** → How functions work together
-- **User experience** → Providing clear feedback and instructions
-- **Input validation** → Handling invalid user input gracefully
-- **Game logic** → Managing state and flow control
-- **Testing** → Separating testable logic from user interface
+Want to keep improving your task manager?
+- Add a simple web interface with HTML
+- Connect it to a database
+- Make it work on mobile
+- Share it with friends and get feedback
 
-## 🔍 Debugging Tips
-
-If your game isn't working:
-
-1. **Test functions individually** → Make sure each function works alone
-2. **Check return values** → Use `console.log()` to see what functions return
-3. **Verify random numbers** → Test `generateRandomNumber()` multiple times
-4. **Test edge cases** → Try guesses of 1, 100, and invalid inputs
-5. **Follow the game flow** → Step through `playGame()` logic carefully
-
-## 🌟 Extension Ideas
-
-Once you get the basic version working:
-
-**Enhanced Features:**
-- Difficulty levels (different number ranges)
-- High score tracking (fewest attempts)
-- Hint system (show if guess is "very close")
-- Multiple rounds with scoring
-
-**Code Improvements:**
-- Add more validation (handle non-numeric input)
-- Implement a maximum number of attempts
-- Add colorful console output
-- Create a web version with HTML
-
-## 🏆 Success Criteria
-
-Your mini-project is complete when:
-- [ ] All four required functions are implemented
-- [ ] Functions work correctly with different inputs
-- [ ] `playGame()` coordinates a complete game session
-- [ ] Interactive `cli.js` provides a good user experience
-- [ ] All automated tests pass
-- [ ] You can play the game and it's fun!
-
-## 🎉 Congratulations!
-
-Completing this mini-project means you've successfully combined all the fundamental programming concepts. You've built a real, working application that demonstrates:
-- Problem decomposition (breaking big problems into functions)
-- Logic implementation (conditionals and loops)
-- User interaction (input/output and validation)
-- Code organization (separating concerns)
-
-This is a significant milestone in your programming journey! 🚀
-
-## 📚 What You've Learned
-
-By completing this project, you've demonstrated mastery of:
-- **Chapter 2**: Sequence (step-by-step instructions)
-- **Chapter 3**: Variables (storing and using data)
-- **Chapter 4**: Operators (comparisons and calculations)
-- **Chapter 5**: Input/Output (interacting with users)
-- **Chapter 6**: Selections (making decisions with if/else)
-- **Chapter 7**: Iterations (repeating actions with loops)
-- **Chapter 8**: Functions (organizing code into reusable pieces)
-- **Chapter 9**: Arrays (managing collections of data)
-
-You're now ready for more advanced programming challenges! 🎓
+The possibilities are endless when you know how to code!

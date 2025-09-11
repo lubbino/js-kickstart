@@ -10,7 +10,16 @@ Your program should:
 
 1. **Define a function called `isEven`** that takes one parameter: `number`
 2. **Return `true` if the number is even**, `false` if it's odd
+
 3. **Use the modulo operator (%)** to check if a number is divisible by 2
+
+The modulus operator % returns the remainder after division:
+
+4 % 2 = 0 (4 divided by 2 = 2 remainder 0)
+5 % 2 = 1 (5 divided by 2 = 2 remainder 1)
+This is a fundamental programming concept used for determining even/odd numbers, cycling through arrays, and many other mathematical operations.
+
+
 4. **Test your function** by calling it with different numbers and displaying the results
 
 ## 💡 Example Usage
