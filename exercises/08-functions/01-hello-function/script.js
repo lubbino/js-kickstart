@@ -14,3 +14,5 @@ function greetPerson(name) {
 }
 
 console.log(greetPerson("Alice"));
+console.log(greetPerson("Bob"));
+console.log(greetPerson("Carol"))
