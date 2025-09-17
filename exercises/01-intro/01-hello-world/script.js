@@ -9,3 +9,5 @@
 // This exercise verifies that your development environment is set up correctly!
 
 // TODO: Add your code below to print "Hello, World!" to the console
+
+console.log("Hello, World!");
