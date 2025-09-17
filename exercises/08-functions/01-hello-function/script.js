@@ -8,4 +8,9 @@
 // TODO: Test your function by calling it with different names
 // Example: console.log(greetPerson("Alice"));
 
-console.log("Replace this with your solution!");
+
+function greetPerson(name) {
+    return "Hello, " + name + "! Welcome to programming!";
+}
+
+console.log(greetPerson("Alice"));

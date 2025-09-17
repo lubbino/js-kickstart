@@ -13,7 +13,7 @@ const secondNumber = Number(prompt("Enter second number: "));
 const thirdNumber = Number(prompt("Enter third number: "));
 
 // TODO: Calculate the sum of all three numbers
-const sum = 0; // Replace 0 with the correct calculation
+const sum = firstNumber+secondNumber+thirdNumber; // Replace 0 with the correct calculation
 
 // TODO: Display the result
 console.log("The sum is: " + sum);
