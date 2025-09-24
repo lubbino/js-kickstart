@@ -33,30 +33,56 @@
 console.log("Welcome to your Personal Task Manager!");
 console.log("Start building your solution here...");
 
-// Uncomment and modify this example, or create your own approach:
-/*
-let myTasks = ["Learn arrays", "Practice functions", "Build this project"];
+let tasks = ["sign up for online course", "buy groceries", "walk the dog"];
+let completed = [false, true, false];
 
 function showTasks() {
     console.log("\nYour Tasks:");
-    for (let i = 0; i < myTasks.length; i++) {
-        console.log((i + 1) + ". " + myTasks[i]);
+    for (let i = 0; i < tasks.length; i++) {
+        let status = completed[i] ? "[x]" : "[ ]";
+        console.log((i + 1) + ". " + status + " " + tasks[i]);
     }
 }
 
 function addTask(newTask) {
-    myTasks.push(newTask);
+    tasks.push(newTask);
+    completed.push(false);
     console.log("Added: \"" + newTask + "\"");
 }
 
+function markTaskComplete(taskIndex) {
+    if (taskIndex >= 0 && taskIndex < completed.length) {
+        completed[taskIndex] = true;
+        console.log("Marked task " + (taskIndex + 1) + " as complete.");
+    } else {
+        console.log("Invalid task index.");
+    }
+}
+function countRemainingTasks() {
+    let count = 0;
+    for (let i = 0; i < completed.length; i++) {
+        if (!completed[i]) {
+            count++;
+        }
+    }
+    console.log("You have " + count + " remaining tasks.");
+}
+function deleteTask(taskIndex) {
+    if (taskIndex >= 0 && taskIndex < tasks.length) {
+        let removedTask = tasks.splice(taskIndex, 1);
+        completed.splice(taskIndex, 1);
+        console.log("Deleted: \"" + removedTask + "\"");
+    } else {
+        console.log("Invalid task index.");
+    }
+}
 // Test your functions
 showTasks();
-addTask("Master JavaScript");
+addTask("finish homework");
 showTasks();
-*/
-
-// YOUR CODE GOES HERE:
-// Remember: There's no "right" way to do this!
-// Make it work, make it yours, and have fun!
-
-// Note: If you want to make this interactive you can also refactor the cli.js.
+markTaskComplete(0);
+showTasks();
+countRemainingTasks();
+deleteTask(1);
+showTasks();
+countRemainingTasks();
